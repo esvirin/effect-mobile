@@ -1,0 +1,4 @@
+app:
+  title: "Subscription Service"
+  version: "1.0.0"
+  default_page_size: 50
