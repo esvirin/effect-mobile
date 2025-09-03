@@ -4,10 +4,11 @@ import (
 	"net/http"
 	"time"
 
+	"effect-mobile/internal/models"
+	"effect-mobile/internal/repository"
+
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/subscription-service/internal/models"
-	"github.com/subscription-service/internal/repository"
 )
 
 type SubscriptionHandler struct {

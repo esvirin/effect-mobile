@@ -1,13 +1,12 @@
-
 services:
   db:
     image: postgres:15
     environment:
-      POSTGRES_USER: appuser
-      POSTGRES_PASSWORD: apppassword
-      POSTGRES_DB: subscriptions_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: subscriptions
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - db_data:/var/lib/postgresql/data
 
@@ -17,7 +16,7 @@ services:
       - db
     env_file: .env
     ports:
-      - "8080:8080"
+      - '8080:8080'
 
 volumes:
   db_data:

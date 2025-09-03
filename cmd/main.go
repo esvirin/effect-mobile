@@ -1,10 +1,11 @@
 package main
 
 import (
+	"effect-mobile/internal/db"
+	"effect-mobile/internal/handlers"
+	"effect-mobile/internal/repository"
+
 	"github.com/gin-gonic/gin"
-	"github.com/subscription-service/internal/db"
-	"github.com/subscription-service/internal/handlers"
-	"github.com/subscription-service/internal/repository"
 )
 
 func main() {
