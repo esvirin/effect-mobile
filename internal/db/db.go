@@ -5,7 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/subscription-service/internal/models"
+	"effect-mobile/internal/models"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -24,7 +25,6 @@ func InitDB() *gorm.DB {
 		log.Fatalf("failed to connect database: %v", err)
 	}
 
-	// AutoMigrate для dev (в бою используем goose)
 	db.AutoMigrate(&models.Subscription{})
 
 	return db

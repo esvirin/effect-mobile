@@ -3,8 +3,9 @@ package repository
 import (
 	"time"
 
+	"effect-mobile/internal/models"
+
 	"github.com/google/uuid"
-	"github.com/subscription-service/internal/models"
 	"gorm.io/gorm"
 )
 
@@ -40,7 +41,6 @@ func (r *SubscriptionRepository) Delete(id uuid.UUID) error {
 	return r.db.Delete(&models.Subscription{}, "id = ?", id).Error
 }
 
-// Сумма подписок по фильтрам
 func (r *SubscriptionRepository) Sum(userID *uuid.UUID, serviceName *string, from time.Time, to time.Time) (int, error) {
 	var sum int
 	query := r.db.Model(&models.Subscription{}).
